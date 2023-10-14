@@ -94,7 +94,10 @@ namespace vp {
 
 
 #define vp_assert_always(cond, trace_ptr, msg...)  \
-  if (!(cond)) {                                   \
+/* Work around GCC 11+ bug */                      \
+_Pragma("GCC diagnostic push")                     \
+_Pragma("GCC diagnostic ignored \"-Wnonnull\"")    \
+if (!(cond)) {                                     \
     if (trace_ptr)                                 \
       ((vp::trace *)(trace_ptr))->fatal(msg);      \
     else                                           \
@@ -102,7 +105,8 @@ namespace vp {
       fprintf(stdout, "ASSERT FAILED: %s", msg);   \
       abort();                                     \
     }                                              \
-  }
+} \
+_Pragma("GCC diagnostic pop")
 
 #define vp_warning_always(trace_ptr, msg...)       \
     if (trace_ptr)                                 \
