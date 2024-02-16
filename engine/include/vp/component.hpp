@@ -27,6 +27,8 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include <stdint.h>
+#include <stdbool.h>
 #include "vp/ports.hpp"
 #include "vp/config.hpp"
 #include "vp/clock/clock_event.hpp"

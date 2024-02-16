@@ -21,6 +21,8 @@
 #ifndef __VP_CLOCK_EVENT_HPP__
 #define __VP_CLOCK_EVENT_HPP__
 
+#include <stdint.h>
+#include <stdbool.h>
 #include "vp/vp_data.hpp"
 
 namespace vp {

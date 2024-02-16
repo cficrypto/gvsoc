@@ -22,6 +22,8 @@
 #define __VP_TRACE_EVENT_DUMPER_HPP__
 
 #include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 namespace vp {
 
